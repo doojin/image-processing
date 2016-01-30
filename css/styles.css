@@ -2,7 +2,6 @@ html, body {
     background-color: #333;
     height: 100%;
     margin: 0;
-    overflow: hidden;
     width: 100%
 }
 
@@ -10,7 +9,7 @@ html, body {
     border: dashed 1px #444;
     display: block;
     height: 500px;
-    margin: 2% auto 0;
+    margin: 3% auto 5%;
     width: 800px;
 }
 
@@ -20,6 +19,6 @@ html, body {
     bottom: 0;
     color: white;
     height: 30px;
-    position: absolute;
+    position: fixed;
     width: 100%;
 }
