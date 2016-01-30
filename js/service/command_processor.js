@@ -3,14 +3,23 @@ define([
     'command/command',
     'command/load_image',
     'command/clear',
-    'command/resize_canvas'
-], function($, Command, loadImageCmd, clearCmd, resizeCanvasCmd) {
+    'command/resize_canvas',
+    'command/black_white'
+], function(
+    $,
+    Command,
+    loadImageCmd,
+    clearCmd,
+    resizeCanvasCmd,
+    blackWhiteCmd
+) {
 
     var commandLine = $('#command-line');
     var commands = [
         loadImageCmd,
         clearCmd,
-        resizeCanvasCmd
+        resizeCanvasCmd,
+        blackWhiteCmd
     ];
     var lastCommand = '';
 

@@ -1,10 +1,9 @@
 define(['config'], function(config) {
 
-    var RATIO_WH = config.canvasWidth / config.canvasHeight;
-
     return {
         calculateRatio: function(imageWidth, imageHeight) {
-            return imageWidth / imageHeight > RATIO_WH ?
+            var ratioWH = config.canvasWidth / config.canvasHeight;
+            return imageWidth / imageHeight > ratioWH ?
                 imageWidth / config.canvasWidth : imageHeight / config.canvasHeight;
         }
     };
