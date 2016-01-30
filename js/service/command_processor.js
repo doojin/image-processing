@@ -9,7 +9,8 @@ define([
     'command/remove_green',
     'command/remove_blue',
     'command/invert',
-    'command/change_colors'
+    'command/change_colors',
+    'command/reduce_colors'
 ], function(
     $,
     Command,
@@ -21,7 +22,8 @@ define([
     removeGreenCmd,
     removeBlueCmd,
     invertCmd,
-    changeColorsCmd
+    changeColorsCmd,
+    reduceColorsCmd
 ) {
 
     var commandLine = $('#command-line');
@@ -34,7 +36,8 @@ define([
         removeGreenCmd,
         removeBlueCmd,
         invertCmd,
-        changeColorsCmd
+        changeColorsCmd,
+        reduceColorsCmd
     ];
 
     var history = [];
