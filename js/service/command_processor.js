@@ -58,7 +58,7 @@ define([
     function processCommand() {
         updateHistory();
         clearCommandLine();
-        var commandData = parseCommand(history[0]);
+        var commandData = parseCommand(history[1]);
         var command = findCommand(commandData);
         command.process(commandData.args);
     }
