@@ -4,14 +4,22 @@ define([
     'command/load_image',
     'command/clear',
     'command/resize_canvas',
-    'command/black_white'
+    'command/black_white',
+    'command/remove_red',
+    'command/remove_green',
+    'command/remove_blue',
+    'command/invert'
 ], function(
     $,
     Command,
     loadImageCmd,
     clearCmd,
     resizeCanvasCmd,
-    blackWhiteCmd
+    blackWhiteCmd,
+    removeRedCmd,
+    removeGreenCmd,
+    removeBlueCmd,
+    invertCmd
 ) {
 
     var commandLine = $('#command-line');
@@ -19,7 +27,11 @@ define([
         loadImageCmd,
         clearCmd,
         resizeCanvasCmd,
-        blackWhiteCmd
+        blackWhiteCmd,
+        removeRedCmd,
+        removeGreenCmd,
+        removeBlueCmd,
+        invertCmd
     ];
     var lastCommand = '';
 

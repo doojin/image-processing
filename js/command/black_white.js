@@ -1,10 +1,9 @@
-define(['command/command', 'filter/black_white', 'service/painter'], function(Command, blackWhiteFilter, painter) {
+define(['command/command', 'filter/black_white'], function(Command, blackWhiteFilter) {
 
     var blackWhiteFilterCmd = new Command('black white', 0);
 
     blackWhiteFilterCmd.process = function() {
-        blackWhiteFilter.apply();
-        painter.drawFromImageStorage();
+        blackWhiteFilter.run();
     };
 
     return blackWhiteFilterCmd;

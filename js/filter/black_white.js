@@ -1,12 +1,17 @@
-define(['service/image_storage', 'service/painter'], function(storage, painter) {
+define(['service/image_storage', 'filter/filter'], function(storage, Filter) {
 
-    return {
-        apply: function() {
-            storage.eachPixel(function(i, red, green, blue, opacity) {
-                var avg = (red + green + blue)/3;
-                storage.setPixel(i, avg, avg, avg, opacity);
-            });
-        }
+    var blackWhiteFilter = new Filter();
+
+    blackWhiteFilter.apply = function() {
+        storage.eachPixel(function (index, red, green, blue, opacity) {
+            var avg = (red + green + blue) / 3;
+            storage.setPixel(index, avg, avg, avg, opacity)
+        });
     };
 
+    return blackWhiteFilter;
+
 });
+
+
+
