@@ -33,21 +33,40 @@ define([
         removeBlueCmd,
         invertCmd
     ];
-    var lastCommand = '';
+
+    var history = [];
+    var current = 0;
 
     function listen() {
         commandLine.keypress(function(e) {
             if (e.keyCode === 13) processCommand();
-            if (e.keyCode === 38) commandLine.val(lastCommand);
+            if (e.keyCode === 38) incrementHistory();
+            if (e.keyCode === 40) decrimentHistory();
         });
     }
 
+    function decrimentHistory() {
+        if (current > 0) current--;
+        commandLine.val(history[current]);
+    }
+
+    function incrementHistory() {
+        if (current < history.length-1) current++;
+        commandLine.val(history[current]);
+    }
+
     function processCommand() {
-        lastCommand = commandLine.val();
+        updateHistory();
         clearCommandLine();
-        var commandData = parseCommand(lastCommand);
+        var commandData = parseCommand(history[0]);
         var command = findCommand(commandData);
         command.process(commandData.args);
+    }
+
+    function updateHistory() {
+        current = 0;
+        history[0] = commandLine.val();
+        history.unshift('');
     }
 
     function clearCommandLine() {
