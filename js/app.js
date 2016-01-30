@@ -7,14 +7,13 @@
         }
     });
 
-    define(['jquery', 'service/painter', 'config'], function($, painter, config) {
-        $('#canvas')
-            .attr('width', config.canvasWidth)
-            .attr('height', config.canvasHeight)
-            .css('width', config.canvasWidth + 'px')
-            .css('height', config.canvasHeight + 'px');
-
-        painter.loadImage(config.imageFile);
+    define([
+        'service/canvas',
+        'service/painter',
+        'service/command_processor'
+    ], function(canvas, painter, cmdProcessor) {
+        canvas.redraw();
+        cmdProcessor.listen();
     });
 
 }());

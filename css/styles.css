@@ -1,12 +1,25 @@
 html, body {
+    background-color: #333;
     height: 100%;
-    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    width: 100%
 }
 
 #canvas {
-    border: solid 1px #bbb;
+    border: dashed 1px #444;
     display: block;
     height: 500px;
     margin: 2% auto 0;
     width: 800px;
+}
+
+#command-line {
+    background-color: #555;
+    border: none;
+    bottom: 0;
+    color: white;
+    height: 30px;
+    position: absolute;
+    width: 100%;
 }

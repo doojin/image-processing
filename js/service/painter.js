@@ -24,6 +24,7 @@ define(['config', 'utils/math_utils'], function(config, mathUtils) {
     }
 
     return {
-        loadImage: loadImage
+        loadImage: loadImage,
+        clear: clear
     };
 });

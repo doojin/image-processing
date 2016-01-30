@@ -1,9 +1,10 @@
 define(function() {
 
-    return {
-        canvasWidth: 800,
-        canvasHeight: 500,
-        imageFile: 'img.jpg'
-    };
+    var config = {};
+
+    config.canvasWidth = 800;
+    config.canvasHeight = 500;
+
+    return config;
 
 });
