@@ -8,7 +8,8 @@ define([
     'command/remove_red',
     'command/remove_green',
     'command/remove_blue',
-    'command/invert'
+    'command/invert',
+    'command/change_colors'
 ], function(
     $,
     Command,
@@ -19,7 +20,8 @@ define([
     removeRedCmd,
     removeGreenCmd,
     removeBlueCmd,
-    invertCmd
+    invertCmd,
+    changeColorsCmd
 ) {
 
     var commandLine = $('#command-line');
@@ -31,7 +33,8 @@ define([
         removeRedCmd,
         removeGreenCmd,
         removeBlueCmd,
-        invertCmd
+        invertCmd,
+        changeColorsCmd
     ];
 
     var history = [];
@@ -75,11 +78,11 @@ define([
 
     function parseCommand(input) {
         var args = [];
-        var split1 = input.split('->');
+        var split1 = input.split('>');
         var cmdName = split1[0].trim();
 
         if (split1[1]) {
-            var split2 = split1[1].split(',,');
+            var split2 = split1[1].split(',');
             split2.forEach(function(arg) {
                 args.push(arg.trim());
             });
