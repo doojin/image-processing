@@ -1,0 +1,12 @@
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+#canvas {
+    border: solid 1px #bbb;
+    display: block;
+    height: 500px;
+    margin: 2% auto 0;
+    width: 800px;
+}
