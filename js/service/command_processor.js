@@ -11,7 +11,8 @@ define([
     'command/invert',
     'command/change_colors',
     'command/reduce_colors',
-    'command/join_pixels'
+    'command/join_pixels',
+    'command/join_pixels_mosaic'
 ], function(
     $,
     Command,
@@ -25,7 +26,8 @@ define([
     invertCmd,
     changeColorsCmd,
     reduceColorsCmd,
-    joinPixelsCmd
+    joinPixelsCmd,
+    joinPixelsMosaicCmd
 ) {
 
     var commandLine = $('#command-line');
@@ -40,7 +42,8 @@ define([
         invertCmd,
         changeColorsCmd,
         reduceColorsCmd,
-        joinPixelsCmd
+        joinPixelsCmd,
+        joinPixelsMosaicCmd
     ];
 
     var history = [];

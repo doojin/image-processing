@@ -1,10 +1,10 @@
 define(['service/image_storage', 'filter/filter', 'config'], function(storage, Filter, config) {
 
-    var joinPixelsFilter = new Filter();
+    var joinPixelsMosaic = new Filter();
 
-    joinPixelsFilter.apply = function(amt) {
-        for (var x = 1; x < config.canvasWidth; x+=amt) {
-            for (var y = 1; y < config.canvasHeight; y+=amt) {
+    joinPixelsMosaic.apply = function(amt, mosaicAmt) {
+        for (var x = 1; x < config.canvasWidth; x+=amt + mosaicAmt) {
+            for (var y = 1; y < config.canvasHeight; y+=amt + mosaicAmt) {
 
                 var totalRed = 0;
                 var totalGreen = 0;
@@ -36,8 +36,6 @@ define(['service/image_storage', 'filter/filter', 'config'], function(storage, F
         }
     };
 
-
-
-    return joinPixelsFilter;
+    return joinPixelsMosaic;
 
 });
